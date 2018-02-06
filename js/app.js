@@ -13,6 +13,8 @@ let turns = 0;
 const o ="box box-filled-1"
 const x ="box box-filled-2"
 finish.hide();
+player1Logo.hide();
+player2Logo.hide();
 
 
 
@@ -20,12 +22,16 @@ finish.hide();
 
 //on click start buton hide start screen and make the player 1 logo active state
 start.on('click', (e) =>{
+  player1Logo.show();
+  player2Logo.show();
   start.hide();
   player1Logo.addClass("active");
 
 });
 
 newGame.on('click', (e)=>{
+  player1Logo.show();
+  player2Logo.show();
   finish.hide();
   board.show();
   player1Logo.addClass("active");
@@ -100,7 +106,7 @@ function endGame(){
     (boxes[2].className === o && boxes[4].className === o && boxes[6].className === o) ||
     (boxes[1].className === o && boxes[4].className === o && boxes[7].className === o)){
     finish.show();
-    message.text("WINNNER");
+    message.text("WINNER");
     finish.addClass("screen screen-win screen-win-one");
     board.hide();
     turns = 0;
